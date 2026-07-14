@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "lib": ["ES2020"],
+    "outDir": "./dist",
+    "rootDir": "./",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "allowSyntheticDefaultImports": true,
+    "moduleDetection": "force",
+    "noEmit": false
+  },
+  "include": ["*.ts", "lib/**/*.ts", "routes/**/*.ts", "middleware/**/*.ts", "models/**/*.ts"],
+  "exclude": ["node_modules", "dist", ".vercel"]
+}
