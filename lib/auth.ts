@@ -70,16 +70,9 @@ export async function getAuth() {
                     trustedProviders: ["google"],
                 },
             },
-            // MongoDB adapter already defaults to the standard collection
-            // names (user, account, session, verification) — no per-model
-            // config is needed or supported here.
+     
             database: mongodbAdapter(db),
-            // Required for cross-site OAuth: pawify-server.vercel.app and
-            // pawify-kappa.vercel.app are on different subdomains of the
-            // public vercel.app suffix, so browsers treat them as separate
-            // sites. The OAuth "state" cookie needs SameSite=None; Secure
-            // to survive the redirect back from Google, otherwise it gets
-            // dropped and the callback fails with state_mismatch.
+          
             advanced: {
                 defaultCookieAttributes: {
         sameSite: "none",

@@ -22,10 +22,10 @@ export async function connectToDatabase(): Promise<Db> {
         cachedClient = client;
         cachedDb = db;
 
-        console.log(`✅ Connected to MongoDB (database: ${db.databaseName})`);
+        console.log(`Connected to MongoDB (database: ${db.databaseName})`);
         return db;
     } catch (error) {
-        console.error("❌ Failed to connect to MongoDB:", error);
+        console.error(" Failed to connect to MongoDB:", error);
         throw error;
     }
 }
@@ -35,8 +35,7 @@ export function toObjectId(id: string | ObjectId): ObjectId {
     if (typeof id === "string" && ObjectId.isValid(id)) {
         return new ObjectId(id);
     }
-    // Return a new ObjectId instead of throwing error
-    // This way invalid IDs just return an empty array
+
     return new ObjectId();
 }
 
@@ -45,6 +44,6 @@ export async function closeDatabaseConnection(): Promise<void> {
         await cachedClient.close();
         cachedClient = null;
         cachedDb = null;
-        console.log("✅ MongoDB connection closed");
+        console.log(" MongoDB connection closed");
     }
 }
