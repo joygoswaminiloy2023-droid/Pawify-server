@@ -82,8 +82,9 @@ export async function getAuth() {
             // dropped and the callback fails with state_mismatch.
             advanced: {
                 defaultCookieAttributes: {
-                    sameSite: "none",
-                    secure: true,
+        sameSite: "none",
+        secure: true,
+        partitioned: true,
                 },
             },
         });
